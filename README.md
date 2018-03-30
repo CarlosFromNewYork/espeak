@@ -27,11 +27,8 @@
 ----------
 
 The eSpeak NG (Next Generation) Text-to-Speech program is an open source speech
-synthesizer that supports [101 languages and accents](docs/languages.md).
-It is based on the eSpeak engine created by Jonathan Duddington. It uses
-spectral formant synthesis by default which sounds robotic, but can be
-configured to use Klatt formant synthesis or MBROLA to give it a more natural
-sound.
+synthesizer supporting [101 languages and accents](docs/languages.md) and is based on Jonathan Duddington's eSpeak engine.
+eSpeak NG can be configured to use Klatt formant synthesis or MBROLA for a natural sounding speech cadence over the robotic tone of spectral formant synthesis.
 
 See the [CHANGELOG](CHANGELOG.md) for a description of the changes in the
 various releases and with the eSpeak project.
@@ -344,24 +341,17 @@ options available to these commands with example usage.
 
 ## eSpeak Compatibility
 
-The *espeak-ng* binaries expose the same command-line options as *espeak*, with
-several additions to expose new functionality from *espeak-ng* such as specifying
-the output audio device name to use. The build creates symlinks of `espeak` to
+The *eSpeak-ng* binaries uses the same command-line options as *eSpeak*, with
+several additions such as specifying the output audio device name to use. The build creates symlinks of `espeak` to
 `espeak-ng`, and `speak` to `speak-ng`.
 
-The espeak `speak_lib.h` include file is provided in `espeak-ng/speak_lib.h` with
-an optional symlink in `espeak/speak_lib.h`. This file contains the espeak API as
-of 1.48.15, with a change to the `ESPEAK_API` macro to fix building on Windows,
-and some minor changes to the documentation comments. Thus, the C API is API and
-ABI compatible with espeak.
+The espeak `speak_lib.h` file is included in `espeak-ng/speak_lib.h` with
+an optional symlink in `espeak/speak_lib.h`. This file contains the eSpeak 1.48.15 API with a change to the `ESPEAK_API` macro to fix building on Windows, allowing the C API to be API and ABI compatible with eSpeak.
 
-The `espeak-data` data has been moved to `espeak-ng-data` to avoid conflicts with
-espeak. There have been various changes to the voice, dictionary and phoneme files
-that make them incompatible with espeak.
+Data from `espeak-data` has been moved to `espeak-ng-data` to avoid conflicts with eSpeak, as changes to the voice, dictionary and phoneme files of `espeak-data` have caused incompatibility issues.
 
-The *espeak-ng* project does not include the *espeakedit* program. It has moved
-the logic to build the dictionary, phoneme and intonation binary files into the
-`libespeak-ng.so` file that is accessible from the `espeak-ng` command line and
+*espeak-ng* does not include the *espeakedit* program, and has moved
+the build logic into `libespeak-ng.so` to be accessed from the `espeak-ng` command line and
 C API.
 
 ## Historical Versions
