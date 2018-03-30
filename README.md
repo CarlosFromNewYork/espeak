@@ -351,7 +351,7 @@ an optional symlink in `espeak/speak_lib.h`. This file contains the eSpeak 1.48.
 Data from `espeak-data` has been moved to `espeak-ng-data` to avoid conflicts with eSpeak, as changes to the voice, dictionary and phoneme files of `espeak-data` have caused incompatibility issues.
 
 *espeak-ng* does not include the *espeakedit* program, and has moved
-the build logic into `libespeak-ng.so` to be accessed from the `espeak-ng` command line and
+the build logic into `libespeak-ng.so` to be accessed by the `espeak-ng` command line and
 C API.
 
 ## Historical Versions
